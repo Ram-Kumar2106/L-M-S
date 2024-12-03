@@ -11,26 +11,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(unique = true, nullable = false)
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String email;
-
-    private String role; // e.g., ROLE_USER, ROLE_ADMIN
-    public String getPassword() {
-        return password;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
+    private String firstName;
+    private String lastName;
+    private String role = "ROLE_USER";
+    private boolean enabled = true;
 }
-

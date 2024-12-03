@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/")
-    public String home() {
+    @GetMapping("/index")
+    public String index() {
         return "index";  // Renders 'index.html' from the templates folder
     }
 

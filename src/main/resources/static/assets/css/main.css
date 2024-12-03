@@ -1884,3 +1884,44 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
+.btn-login,
+.btn-signup,
+.btn-logout {
+    padding: 8px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-login {
+    background: #5fcf80;
+    color: #fff;
+    border: 2px solid #5fcf80;
+}
+
+.btn-signup {
+    background: transparent;
+    color: #5fcf80;
+    border: 2px solid #5fcf80;
+}
+
+.btn-logout {
+    background: #dc3545;
+    color: #fff;
+    border: 2px solid #dc3545;
+    cursor: pointer;
+}
+
+.btn-login:hover,
+.btn-signup:hover,
+.btn-logout:hover {
+    background: #3ac162;
+    color: #fff;
+    border-color: #3ac162;
+}
+
+.btn-logout:hover {
+    background: #bb2d3b;
+    border-color: #bb2d3b;
+}

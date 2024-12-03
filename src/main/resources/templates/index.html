@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
   <meta charset="utf-8">
@@ -49,7 +49,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/" class="active">Home<br></a></li>
+          <li><a href="/index" class="active">Home<br></a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/courses">Courses</a></li>
           <li><a href="/trainers">Trainers</a></li>
@@ -59,7 +59,19 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
+      <div class="ms-auto me-3">
+        <!-- Show these links when user is not logged in -->
+        <div sec:authorize="!isAuthenticated()">
+            <a href="/login" class="btn-login me-2">Login</a>
+            <a href="/signup" class="btn-signup">Sign Up</a>
+        </div>
+        <!-- Show this when user is logged in -->
+        <div sec:authorize="isAuthenticated()">
+            <form th:action="@{/logout}" method="post" class="d-inline">
+                <button type="submit" class="btn-logout">Logout</button>
+            </form>
+        </div>
+       </div>
       <a class="btn-getstarted" href="/courses">Get Started</a>
 
     </div>
